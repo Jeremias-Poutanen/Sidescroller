@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        Physics.gravity = new Vector2(0, -9.81f);
         Physics.gravity *= gravityMultiplier; 
     }
 
