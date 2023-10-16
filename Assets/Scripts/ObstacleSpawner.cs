@@ -6,31 +6,42 @@ public class ObstacleSpawner : MonoBehaviour
 {
     [SerializeField] GameObject obstacleSpawner;
     [SerializeField] GameObject[] obstacleArray;
+    GameManager gameManager;
     int obstacleRng;
-    float spawnSpeed = 3f;
+    float spawnSpeed = 2f;
+    public float minSpawnSpeed = 1.5f;
+    public float maxSpawnSpeed = 2.5f;
     Vector3 pos;
     Quaternion rot;
     IEnumerator coroutine;
 
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         coroutine = SpawnObstacles(spawnSpeed);
         StartCoroutine(coroutine);
+    }
+
+    void Update()
+    {
+        if(gameManager.gameOver)
+        {
+            StopCoroutine(coroutine);
+        }
     }
 
     IEnumerator SpawnObstacles(float spawnSpeed)
     {
         while (true)
         {
-            float spawnSpeedRandomness;
             obstacleRng = Random.Range(0, obstacleArray.Length);
             pos = obstacleSpawner.transform.position;
             rot = obstacleSpawner.transform.rotation;
 
-            spawnSpeedRandomness = spawnSpeed - Random.Range(0.5f, 2f);
+            spawnSpeed = Random.Range(minSpawnSpeed, maxSpawnSpeed);
 
             Instantiate(obstacleArray[obstacleRng], pos, rot);
-            yield return new WaitForSeconds(spawnSpeedRandomness); ;
+            yield return new WaitForSeconds(spawnSpeed); ;
         }
     }
 }

@@ -5,17 +5,33 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    public void Play()
+    public static MenuManager instance = null;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+    }
+
+    public static void Play()
     {
         SceneManager.LoadScene("Level");
     }
 
-    public void QuitToMenu()
+    public static void QuitToMenu()
     {
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void Quit()
+    public static void Quit()
     {
         Application.Quit();
     }

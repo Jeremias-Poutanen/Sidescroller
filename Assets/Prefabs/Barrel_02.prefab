@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5561698908720038320}
   - component: {fileID: 822541614465275909}
   - component: {fileID: 5646617806934437132}
+  - component: {fileID: -4801993037657146338}
   m_Layer: 0
   m_Name: Barrel_02
   m_TagString: Obstacle
@@ -141,3 +142,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5075855, y: 6.2575874, z: 1.5543228}
   m_Center: {x: -0.027396202, y: 3.1199565, z: 0}
+--- !u!114 &-4801993037657146338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829434981181402571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95260aecb068f694b9a05950b88fef2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyDelay: 10
