@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AudioClip jumpAudio;
     [SerializeField] AudioClip crashAudio;
     [SerializeField] AudioClip scoreAudio;
+    [SerializeField] AudioClip harderAudio;
     [SerializeField] AudioSource audioSource;
     public Animator playerAnimator;
     bool isOnGround = false;
@@ -69,7 +70,15 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.tag == "Obstacle")
         {
             gameManager.AddScore();
-            audioSource.clip = scoreAudio;
+
+            if(gameManager.score % 5 == 0)
+            {
+                audioSource.clip = harderAudio;
+            }
+            else
+            {
+                audioSource.clip = scoreAudio;
+            }
             audioSource.Play();
         }
     }

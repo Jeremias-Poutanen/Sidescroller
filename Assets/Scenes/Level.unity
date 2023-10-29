@@ -562,7 +562,7 @@ PrefabInstance:
     - target: {fileID: 6662299996446806614, guid: 9f565d9d5b449fa44ac622533321880a, type: 3}
       propertyPath: crashAudio
       value: 
-      objectReference: {fileID: 8300000, guid: 4bcde6de2166e41e284ec46d8a01fb90, type: 3}
+      objectReference: {fileID: 8300000, guid: ac891292426d9f044b7195cddbc0f023, type: 3}
     - target: {fileID: 6662299996446806614, guid: 9f565d9d5b449fa44ac622533321880a, type: 3}
       propertyPath: scoreAudio
       value: 
@@ -575,6 +575,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 813879889}
+    - target: {fileID: 6662299996446806614, guid: 9f565d9d5b449fa44ac622533321880a, type: 3}
+      propertyPath: harderAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 552a93a0f111b3b41b5375137fb4b873, type: 3}
     - target: {fileID: 6662299996446806614, guid: 9f565d9d5b449fa44ac622533321880a, type: 3}
       propertyPath: playerAnimator
       value: 
@@ -1095,9 +1099,11 @@ MonoBehaviour:
   healthText: {fileID: 1808976837}
   scoreText: {fileID: 1265565782}
   harderText: {fileID: 2061706669}
+  music: {fileID: 813879891}
   playerController: {fileID: 1416283645}
   obstacleSpawner: {fileID: 524932301}
   gameOver: 0
+  score: 0
 --- !u!4 &813879890
 Transform:
   m_ObjectHideFlags: 0
@@ -1123,11 +1129,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 834bc99524a174a378e982623582c06d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d70999ba737574c808b1d37cbdca0c37, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2044,7 +2050,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0

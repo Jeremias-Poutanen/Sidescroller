@@ -9,11 +9,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMP_Text healthText;
     [SerializeField] TMP_Text scoreText;
     [SerializeField] GameObject harderText;
+    [SerializeField] AudioSource music;
     [SerializeField] PlayerController playerController;
     [SerializeField] ObstacleSpawner obstacleSpawner;
     public bool gameOver = false;
-    int score = 0;
+    public int score = 0;
     int health = 3;
+
+    void Start()
+    {
+        music.pitch = 1.0f;
+    }
 
     public void AddScore()
     {
@@ -26,6 +32,7 @@ public class GameManager : MonoBehaviour
             harderText.SetActive(true);
             obstacleSpawner.minSpawnSpeed *= 0.9f;
             obstacleSpawner.maxSpawnSpeed *= 0.9f;
+            music.pitch += 0.05f;
             Invoke("DisableHarderText", 1.5f);
         }
     }
